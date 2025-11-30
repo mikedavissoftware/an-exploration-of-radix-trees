@@ -11,4 +11,5 @@ struct rt_node {
     int end_count;
     bool cap;
     map<char, rt_node> node_list;
-}
+};
+
