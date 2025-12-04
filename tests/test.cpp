@@ -14,5 +14,4 @@ const string PARSE_1 = "This is the test string of text. You know, the one that 
 
 TEST(test_suite, InitialTests) {
     vector<string> word_list = split_into_words(PARSE_1);
-    // EXPECT_EQ(word_list[24], "certainly");
 }

@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/micdavis93/development/school/cspb-2270-data-structures/an-exploration-of-radix-trees/code/RadixTree.cpp" "CMakeFiles/run_tests.dir/code/RadixTree.cpp.o" "gcc" "CMakeFiles/run_tests.dir/code/RadixTree.cpp.o.d"
-  "/home/micdavis93/development/school/cspb-2270-data-structures/an-exploration-of-radix-trees/tests/test.cpp" "CMakeFiles/run_tests.dir/tests/test.cpp.o" "gcc" "CMakeFiles/run_tests.dir/tests/test.cpp.o.d"
+  "/home/micdavis93/development/school/cspb-2270/an-exploration-of-radix-trees/code/RadixTree.cpp" "CMakeFiles/run_tests.dir/code/RadixTree.cpp.o" "gcc" "CMakeFiles/run_tests.dir/code/RadixTree.cpp.o.d"
+  "/home/micdavis93/development/school/cspb-2270/an-exploration-of-radix-trees/tests/test.cpp" "CMakeFiles/run_tests.dir/tests/test.cpp.o" "gcc" "CMakeFiles/run_tests.dir/tests/test.cpp.o.d"
   )
 
 # Targets to which this target links.

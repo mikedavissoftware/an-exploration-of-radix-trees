@@ -1,5 +1,5 @@
-#ifndef RADIXTREE_H__
-#define RADIXTREE_H__
+#ifndef RADIXTREE_H
+#define RADIXTREE_H
 
 #include <memory>
 #include <string>
@@ -7,10 +7,10 @@
 #include <vector>
 #include <iostream>
 #include <cctype>
+#include <algorithm>
+#include <iterator>
 
 using namespace std;
-
-string DELIM = " .,;!?";
 
 struct rt_node {
     string prefix;
@@ -21,4 +21,4 @@ struct rt_node {
 
 vector<string> split_into_words(string to_parse);
 
-#endif RADIXTREE_H__
+#endif // RADIXTREE_H
