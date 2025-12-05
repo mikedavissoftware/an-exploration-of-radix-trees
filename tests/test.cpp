@@ -12,7 +12,7 @@ using namespace std;
 
 const string TEST_TEXT_1 = "This is the test string of text. You know, the one that will indeed be indexed by Mike's radix tree data structure. It will certainly happen.";
 
-const string TEST_TEXT_2 = "The th";
+const string TEST_TEXT_2 = "The this thistle";
 
 TEST(test_RadixTree, TestConvertToLower) {
     char upper = 'A';
@@ -58,7 +58,8 @@ TEST(test_RadixTree, TestLogWords) {
     for (auto word : words) {
         log_word(rtn, word);
     }
-    ASSERT_EQ(rtn->affix, "th");
+    ASSERT_EQ(rtn->children['e']->affix, "e");
+    ASSERT_EQ(rtn->children['i']->affix, "is");
 }
 
 // TEST(test_RadixTree, TestName) {

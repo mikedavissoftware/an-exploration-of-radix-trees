@@ -79,6 +79,8 @@ void log_word(rt_node* root, string remainder) {
 
     int overlap = check_overlap(affix, remainder);
 
+    
+
     if (overlap == affix.length()) {
         string new_remainder = remainder.substr(overlap);
         rt_node* target = root->children[new_remainder[0]];
