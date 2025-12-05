@@ -132,4 +132,7 @@ A lot of the challenges I encountered were with conversions between string type 
 
 ### To Run
 
-Make sure 
+Navigate to /build folder and run:
+```cmake ..```
+```make```
+```./run_tests```
