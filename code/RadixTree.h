@@ -13,12 +13,22 @@
 using namespace std;
 
 struct rt_node {
-    string prefix;
+    string affix;
+    int count;
     int end_count;
-    bool cap;
-    map<string, rt_node> node_list;
+    // bool cap; // Initially wanted to account for capitalization of certain words but decided to exclude this from the project;
+    rt_node* parent;
+    map<char, rt_node*> children;
 };
 
+char convert_to_lower(char character);
+
 vector<string> split_into_words(string to_parse);
+
+rt_node* init_rt_node(string remainder, rt_node* parent = nullptr);
+
+int check_overlap(string node_chars, string remainder);
+
+void log_word(rt_node* root, string remainder);
 
 #endif // RADIXTREE_H
