@@ -66,6 +66,10 @@ void log_word(rt_node* root, string remainder) {
     string affix = root->affix;
     root->count++; // increment count
 
+    if (root->parent == nullptr) {
+        log_word(root->children[remainder[0]], remainder);
+    }
+
     if (affix.length() == 0) { // if there is no affix
         root->affix = remainder; // replace empty string with remainder
         root->end_count++; // increment the end_count
@@ -78,8 +82,6 @@ void log_word(rt_node* root, string remainder) {
     }
 
     int overlap = check_overlap(affix, remainder);
-
-    
 
     if (overlap == affix.length()) {
         string new_remainder = remainder.substr(overlap);
