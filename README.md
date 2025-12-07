@@ -130,9 +130,36 @@ A lot of the challenges I encountered were with conversions between string type 
 
 <hr/>
 
+### Final Overview:
+
+#### 1. My Goals
+
+I wanted to make an efficient word frequency counter that uses a radix tree to take these word frequencies into account. I was able to build out a robust program of interdependent functions to accomplish this, though I need to review my code one more time to figure out why the word counter isn't working 100%. The tree builder is working great, however.
+
+#### 2. My Functions
+
+- convert_to_lower: simply converts an uppercased character to lowercased
+- split_into_words: splits a string into words, based on delimiters, returning a vector of these words as strings
+- init_rt_node: initializes a radix tree node, based on my rt_node struct
+- check_overlap: checks the number of characters overlap between the remainder input and the current node's infix
+- log_word: logs a word into the tree, stepping through its characters to do so in a way that allows nuance in the way the tree is built (most complex function of the project, and is working great)
+- word_frequency: returns an end_count word frequency based on the input word and whatever root node is chosen
+
+#### 3. Takeaways
+
+Overall, I really enjoyed this project. I took the structure of the many homework assignments we did and applied it to my own idea for a radix tree structure. It was a great way to synthesize what I learned in this class, and I plan to continue building my program after this. I didn't accomplish all of my set goals, but I know I can if I keep at it. This was a great opportunity to build a test suite in C++ as well.
+
+<hr/>
+
 ### To Run
 
 Navigate to /build folder and run:
+
 ```cmake ..```
+<br/>
+
 ```make```
+
+<br/>
+
 ```./run_tests```

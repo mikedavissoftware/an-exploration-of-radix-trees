@@ -17,7 +17,7 @@ const string TEST_TEXT_2 = "This is the test string of text. You know, the one t
 TEST(test_RadixTree, TestConvertToLower) {
     char upper = 'A';
     char lower = 'a';
-    
+
     ASSERT_EQ(convert_to_lower(upper), lower);
 }
 
@@ -97,6 +97,7 @@ TEST(test_RadixTree, TestLogWords2) {
     ASSERT_EQ(rtn->children['t']->infix, "t");
     ASSERT_EQ(rtn->children['t']->children['i']->infix, "is");
     ASSERT_EQ(rtn->children['i']->children['n']->children['x']->infix, "xed");
+    ASSERT_EQ(rtn->children['t']->children['h']->children['e']->end_count, 2);
 }
 
 TEST(test_RadixTree, TestWordFrequency) {
