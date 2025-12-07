@@ -114,17 +114,17 @@ I will measure success for this project by looking at the gains in efficiency fr
 
 ### Explanation of the Final Product
 
-My overall goal with this project was to gain memory efficiency by eliminating layers of the tree when there is a shared affix (string of characters at any point in a word) that can eliminate individual branches. This goal became more clear as the project went along, as is usually the case when you get into the weeds of code. Essentially, I was building a compressed version of a suffix tree, with the added depth of having a word counter and parent node pointers. My suspicion is that this approach might take more computation than a regular suffix tree (single characters), but less memory space. I could see this being useful in the creation of my own local LLM, where I feed it only the data I would like it to pull from.
+My overall goal with this project was to gain memory efficiency by eliminating layers of the tree when there is a shared infix (string of characters at any point in a word) that can eliminate individual branches. This goal became more clear as the project went along, as is usually the case when you get into the weeds of code. Essentially, I was building a compressed version of a suffix tree, with the added depth of having a word counter and parent node pointers. My suspicion is that this approach might take more computation than a regular suffix tree (single characters), but less memory space. I could see this being useful in the creation of my own local LLM, where I feed it only the data I would like it to pull from.
 
 I intended to build a test suite that proved this in metrics, but I didn't allot myself enough time to do so before submission. I still built a test suite, however. Beyond exploring the data structure, this project was a great exercise in that, which I have done before in Ruby, but not in C++.
 
 Now to the details:
 
-Since there are only 26 letters in the English alphabet, and my input string will be in English, it follows that there will be a maximum number of 26 child nodes for any given node. These children will be stored in a map, with the keys being that first letter (in the form of a char), and the value being a pointer to the node that contains the next affix & other data.
+Since there are only 26 letters in the English alphabet, and my input string will be in English, it follows that there will be a maximum number of 26 child nodes for any given node. These children will be stored in a map, with the keys being that first letter (in the form of a char), and the value being a pointer to the node that contains the next infix & other data.
 
 I started off with pen and paper, parsing an example string word by word. This led me to create a simple radix tree, in which there was an unlimited number of children per string. Each time a word came up that shared a letter or prefix with a child node, another branch was created to keep track of the words. And, once the end of a word was reached, the current node would be incremented by one, thus adding to the count of that particular word.
 
-With regards to the benefits of this approach, this project will reduce the redundancy of having nodes for absolutely every letter, by tokenizing different affixes throughout the tree.
+With regards to the benefits of this approach, this project will reduce the redundancy of having nodes for absolutely every letter, by tokenizing different infixes throughout the tree.
 
 A lot of the challenges I encountered were with conversions between string type and char type, but once I got those figured out, it wasn't too difficult getting to the point of my submission. I found that building my tests piece-by-piece was very helpful in building the functions themselves. It helped break the steps down and think from the big picture of inputs and outputs - sort of turned this thing into a black box, which is the goal in the end.
 

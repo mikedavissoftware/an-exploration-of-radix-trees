@@ -13,7 +13,7 @@
 using namespace std;
 
 struct rt_node {
-    string affix;
+    string infix;
     int count;
     int end_count;
     // bool cap; // Initially wanted to account for capitalization of certain words but decided to exclude this from the project;
@@ -31,4 +31,6 @@ int check_overlap(string node_chars, string remainder);
 
 void log_word(rt_node* root, string remainder);
 
-#endif // RADIXTREE_H
+int word_frequency(rt_node* root, string word);
+
+#endif
